@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "resume": {
+    "ziluckmichael.github.io": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/resume",
+            "outputPath": "dist/ziluckmichael.github.io",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,12 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules"
-              ]
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -74,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "resume:build:production"
+              "browserTarget": "ziluckmichael.github.io:build:production"
             },
             "development": {
-              "browserTarget": "resume:build:development"
+              "browserTarget": "ziluckmichael.github.io:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "resume:build"
+            "browserTarget": "ziluckmichael.github.io:build"
           }
         },
         "test": {
@@ -105,6 +100,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
