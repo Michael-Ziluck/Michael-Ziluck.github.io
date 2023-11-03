@@ -1,9 +1,9 @@
-<header class="py-5 row">
-  <div class="col-lg-8 col-md-6 col-12">
+<header>
+  <div>
     <h1>Michael Ziluck</h1>
     <h2>Software Engineer</h2>
   </div>
-  <div class="col-lg-4 col-md-6 col-12 text-end">
+  <div class="icon-container">
     <ul class="icons">
       <li>
         <a class="social-link" target="_blank" href="https://github.com/Michael-Ziluck">
@@ -23,136 +23,95 @@
     </ul>
   </div>
 </header>
+
 <main class="container text-light py-5">
-  <h3>About Me</h3>
-  <article class="row clearfix">
-    <div class="col-md-3 col-sm-4 col-12 no-print">
-      <img class="profile-pic" src="https://www.gravatar.com/avatar/{{Md5.hashStr('ziluckmichael@gmail.com')}}?s=200">
-    </div>
-    <div class="col-md-9 col-sm-8 col-12">
-      <p>Hello! My name is Michael and I'm a Software Engineer. For the past 7 years, I have worked on a variety of
-        applications ranging from enterprise web apps, to game development, to system architecture. Here you can find
-        some key examples of my projects, past experience, and various technical skills.</p>
-      <p>Outside of work, my hobbies include table top RPGs, video games, skiing, and eSports. If you want to chat about
-        any of my hobbies, I would be more than happy to go on long-winded rants about various topics in those
-        realms.</p>
-    </div>
+  <article>
+    <h3>About Me</h3>
+    <section class="d-flex flex-md-row flex-column gap-5">
+      <div class="flex-fill d-flex justify-content-center d-print-none">
+        <img class="profile-pic" src="https://www.gravatar.com/avatar/{{Md5.hashStr('ziluckmichael@gmail.com')}}?s=200">
+      </div>
+      <div class="flex-fill">
+        <p>Hello! My name is Michael and I'm a Software Engineer. For the past 7 years, I have worked on a variety of
+          applications ranging from enterprise web apps, to game development, to system architecture. Here you can find
+          some key examples of my projects, past experience, and various technical skills.</p>
+        <p>Outside of work, my hobbies include table top RPGs, video games, skiing, and eSports. If you want to chat
+          about
+          any of my hobbies, I would be more than happy to go on long-winded rants about various topics in those
+          realms.</p>
+      </div>
+    </section>
   </article>
 
-  <h3>Experience</h3>
-  <article class="row clearfix d-flex role">
-    <div class="col-md-4 col-sm-5 col-12">
-      <h4>Service Management Group</h4>
-      <p class="title font-weight-bold">Software Engineer II</p>
-      <p class="role-dates">March 2021 - Current</p>
-      <p class="company-url"><em><a href="https://smg.com/">https://smg.com/</a></em></p>
-    </div>
-    <p class="col-md-8 col-sm-7 col-12">
-      Helped drive company-level framework decisions by leveraging front-end experience and referencing latest
-      web-standards. Worked with software development and testing team members to design and develop robust
-      web-based software solutions. Reviewed project specifications and designed technology solutions that met and
-      exceeded expectations. Collaborated with development, UX, and product leads to define technical requirements.
-    </p>
-  </article>
-  <article class="row clearfix d-flex role">
-    <div class="col-md-4 col-sm-5 col-12">
-      <h4>Kingland Systems Corporation</h4>
-      <p class="title font-weight-bold">Software Engineer</p>
-      <p class="role-dates">May 2019 - March 2021</p>
-      <p class="company-url"><em><a href="https://kingland.com">https://kingland.com/</a></em></p>
-    </div>
-    <p class="col-md-8 col-sm-7 col-12">
-      Designed and implemented components of various enterprise data management tooling. Was a subject-matter expert on
-      the Angular framework. Responsible for implementation of test-driven software based on software designs and
-      requirements. Part of high-level production maintenance on critical solutions. Started as an intern and progressed
-      to full-time employment.
-    </p>
-  </article>
-  <article class="row clearfix d-flex role">
-    <div class="col-md-4 col-sm-5 col-12">
-      <h4>ISU - Environmental Health and Safety</h4>
-      <p class="title font-weight-bold">Full-Stack Developer</p>
-      <p class="role-dates">August 2015 - May 2019</p>
-      <p class="company-url"><em><a href="https://www.ehs.iastate.edu/">https://www.ehs.iastate.edu/</a></em></p>
-    </div>
-    <p class="col-md-8 col-sm-7 col-12">
-      Created, designed, and implemented software that manages the use, maintenance, and disposal of all materials and
-      equipment used in campus laboratories. Spearheaded reporting tools to DHS, automated process of generating
-      NFPA 704 and other hazard signs, as well as improved and added to management systems for laboratories and
-      principal investigators
-    </p>
+  <article>
+    <h3>Experience</h3>
+    <section *ngFor="let role of experiences" class="new-role">
+      <div class="role-details col-md-4 col-sm-5 col-12">
+        <h4>{{ role.company }}</h4>
+        <p class="role-title">{{ role.title }}</p>
+        <p class="role-dates">{{ role.employed.start }} - {{ role.employed.end ? role.employed.end : 'Current' }}</p>
+        <a [href]="role.website" target="_blank"><em>{{ role.website }}</em></a>
+      </div>
+      <p class="role-description col-md-8 col-sm-7 col-12">{{ role.description }}</p>
+    </section>
   </article>
 
-  <h3>Education</h3>
-  <article class="row clearfix d-flex role">
-    <div class="col-md-4 col-sm-5 col-12">
-      <h4>Iowa State University</h4>
-      <p class="title font-weight-bold">BS Management Information Systems</p>
-      <p class="role-dates">2015-2019</p>
-    </div>
-    <p class="col-md-8 col-sm-7 col-12">
-      When first enrolled at Iowa State, my major was originally Software Engineering. However, due to my strong
-      interest in business application development and extracurricular work experience, I made the switch to Management
-      Information Systems during my sophomore year.
-    </p>
-  </article>
-
-  <h3>Skills / Expertise</h3>
-  <article class="row clearfix d-flex">
-    <div class="col-md-4 col-sm-5 col-12">
-      <p>
-        Throughout my career, I have had the opportunity (and sometimes misfortune) to work with many different pieces
-        of technology. Color Key:
+  <article>
+    <h3>Education</h3>
+    <section class="row d-flex role">
+      <div class="col-md-4 col-sm-5 col-12">
+        <h4>Iowa State University</h4>
+        <p class="title font-weight-bold">BS Management Information Systems</p>
+        <p class="role-dates">2015-2019</p>
+      </div>
+      <p class="col-md-8 col-sm-7 col-12">
+        When first enrolled at Iowa State, my major was originally Software Engineering. However, due to my strong
+        interest in business application development and extracurricular work experience, I made the switch to
+        Management
+        Information Systems during my sophomore year.
       </p>
-      <ul>
-        <li class="text-primary"><span class="text-light">Subject Matter Expert</span></li>
-        <li class="text-success"><span class="text-light">Advanced</span></li>
-        <li class="text-warning"><span class="text-light">Intermediate</span></li>
+    </section>
+  </article>
+
+  <article>
+    <h3>Skills / Experience</h3>
+    <section class="row d-flex">
+      <div class="col-lg-4 col-12 row">
+        <p class="col-lg-12 col-7">
+          Throughout my career, I have had the opportunity (and sometimes misfortune) to work with many different pieces
+          of technology. Several skills marked below SME once qualified as SME, but due to not having used them in some
+          time have been adjusted.
+        </p>
+        <div class="col-lg-12 col-5">
+          <p>Color Key:</p>
+          <ul class="">
+            <li class="text-primary"><span class="text-light">Subject Matter Expert</span></li>
+            <li class="text-success"><span class="text-light">Advanced</span></li>
+            <li class="text-warning"><span class="text-light">Intermediate</span></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="col-lg-8 col-12 skills ps-5">
+        <li *ngFor="let skill of skills"
+            [class.text-primary]="skill.level === 'Expert'"
+            [class.text-success]="skill.level === 'Advanced'"
+            [class.text-warning]="skill.level === 'Intermediate'"
+        >
+        <span class="skill"
+        >
+          {{ skill.name }}
+        </span>
+          <ul *ngIf="skill.subSkills">
+            <li *ngFor="let sub of skill.subSkills"
+                [class.text-primary]="sub.level === 'Expert'"
+                [class.text-success]="sub.level === 'Advanced'"
+                [class.text-warning]="sub.level === 'Intermediate'"
+            >
+              <span class="skill">{{ sub.name }}</span>
+            </li>
+          </ul>
+        </li>
       </ul>
-    </div>
-    <ul class="col-md-8 col-sm-7 col-12 skills ps-5">
-      <li class="text-primary"><span class="text-light">Angular</span></li>
-      <li class="text-primary"><span class="text-light">TypeScript</span></li>
-      <li class="text-success"><span class="text-light">HTML, SCSS, JavaScript</span></li>
-      <li class="text-success"><span class="text-light">Blazor</span></li>
-      <li class="text-success"><span class="text-light">Java</span></li>
-      <li class="text-warning"><span class="text-light">C#</span></li>
-      <li class="text-warning"><span class="text-light">Amazon Web Services + Terraform</span></li>
-      <li class="text-warning"><span class="text-light">Document-Oriented Databases (MongoDB)</span></li>
-      <li class="text-success"><span class="text-light">Relational Databases</span>
-        <ul>
-          <li class="text-success"><span class="text-light">Postgres</span></li>
-          <li class="text-success"><span class="text-light">SQL Server</span></li>
-          <li class="text-success"><span class="text-light">MySQL</span></li>
-        </ul>
-      </li>
-      <li class="text-success"><span class="text-light">Scrum / Agile</span></li>
-      <li class="text-success"><span class="text-light">Git</span>
-        <ul>
-          <li class="text-primary"><span class="text-light">GitHub</span></li>
-          <li class="text-success"><span class="text-light">BitBucket</span></li>
-          <li class="text-success"><span class="text-light">GitLab</span></li>
-        </ul>
-      </li>
-      <li>CI tooling
-        <ul>
-          <li class="text-success"><span class="text-light">Jenkins/CloudBees</span></li>
-          <li class="text-warning"><span class="text-light">GitHub Actions</span></li>
-        </ul>
-      </li>
-      <li>Automated testing tools
-        <ul>
-          <li class="text-primary"><span class="text-light">Selenium</span></li>
-          <li class="text-warning"><span class="text-light">Gauge</span></li>
-        </ul>
-      </li>
-      <li>Build tools
-        <ul>
-          <li class="text-success"><span class="text-light">Gradle</span></li>
-          <li class="text-success"><span class="text-light">Maven</span></li>
-          <li class="text-success"><span class="text-light">Webpack</span></li>
-        </ul>
-      </li>
-    </ul>
+    </section>
   </article>
 </main>
