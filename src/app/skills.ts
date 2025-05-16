@@ -2,11 +2,12 @@ import { Skill } from './models/skill';
 
 export const Skills: Skill[] = [
   { name: 'Angular', level: 'Expert' },
+  { name: 'React', level: 'Advanced' },
   { name: 'TypeScript', level: 'Expert' },
-  { name: 'HTML, SCSS, JavaScript', level: 'Advanced' },
-  { name: 'Blazor', level: 'Advanced' },
+  { name: 'HTML, SCSS, JavaScript', level: 'Expert' },
   { name: 'Java', level: 'Advanced' },
   { name: 'C#', level: 'Intermediate' },
+  { name: 'Blazor', level: 'Advanced' },
   {
     name: 'Cloud Services',
     subSkills: [
