@@ -8,9 +8,9 @@ export const Experiences: Experience[] = [
       start: 'March 2021',
     },
     website: 'https://smg.com/',
-    description: 'Acted as the company\'s Angular and general frontend subject-matter expert. Ran the transition from Angular '
+    description: 'Acted as the company\'s Angular and general front-end subject-matter expert. Ran the transition from Angular '
       + 'to React, creating a platform to create new, deployable applications within minutes. Spearheaded a greenfield '
-      + 'micro-frontend solution by leveraging Webpack\'s Module Federation that is used by all internal teams. Created '
+      + 'micro-front-end solution by leveraging Webpack\'s Module Federation that is used by all internal teams. Created '
       + 'a robust Angular component library that is used to develop consistent web applications. Updated legacy apps '
       + 'from AngularJS to Angular while simultaneously adding new functionality. Collaborated with development, UX, '
       + 'and product leads to define and achieve technical requirements.',
