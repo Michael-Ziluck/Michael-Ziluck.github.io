@@ -29,7 +29,7 @@ export const Experiences: Experience[] = [
       + 'Progressed to full-time employment upon completion of a successful internship.',
   },
   {
-    company: 'ISU—Environmental Health and Safety',
+    company: 'ISU\'s Environmental Health and Safety',
     title: 'Full-Stack Developer',
     employed: {
       start: 'August 2015',
