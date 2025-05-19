@@ -27,12 +27,12 @@
 <main class="container text-light py-5">
   <article>
     <h3>About Me</h3>
-    <section class="d-flex flex-md-row flex-column gap-5">
-      <div class="flex-fill d-flex justify-content-center d-print-none">
+    <section class="d-flex flex-lg-row flex-column gap-5">
+      <div class="flex-fill d-flex justify-content-center align-items-center d-print-none">
         <img class="profile-pic"
           ngSrc="https://www.gravatar.com/avatar/{{Md5.hashStr('ziluckmichael@gmail.com')}}?s=200"
-          width="200px"
-          height="200px"
+          [width]="200"
+          [height]="200"
           alt="Profile Picture"
         >
       </div>
@@ -43,6 +43,13 @@
           some key examples of my projects, past experience, and various technical skills.
         </p>
         <p>
+          My primary skill set is with front-end technologies. I am very passionate about accessible and well-designed
+          web applications, having taken several courses on the subject and attended over a dozen accessibility sessions
+          at development conferences. For specific technologies, I'm a contributor to the open-source Angular repository
+          and very actively follow its development. At my current company, I also head up the effort to start a
+          greenfield project in React.
+        </p>
+        <p>
           Outside of work, my hobbies include table top RPGs, video games, skiing, and eSports. If you want to chat
           about any of my hobbies, I would be more than happy to go on long-winded rants about various topics in those
           realms.
@@ -51,43 +58,15 @@
     </section>
   </article>
 
-  <article>
-    <h3>Experience</h3>
-    <section *ngFor="let role of experiences" class="new-role">
-      <div class="role-details col-md-4 col-sm-5 col-12">
-        <h4>{{ role.company }}</h4>
-        <p class="role-title">{{ role.title }}</p>
-        <p class="role-dates">{{ role.employed.start }} - {{ role.employed.end ? role.employed.end : 'Current' }}</p>
-        <a [href]="role.website" target="_blank"><em>{{ role.website }}</em></a>
-      </div>
-      <p class="role-description col-md-8 col-sm-7 col-12">{{ role.description }}</p>
-    </section>
-  </article>
-
-  <article>
-    <h3>Education</h3>
-    <section class="row d-flex role">
-      <div class="col-md-4 col-sm-5 col-12">
-        <h4>Iowa State University</h4>
-        <p class="title font-weight-bold">BS Management Information Systems</p>
-        <p class="role-dates">2015-2019</p>
-      </div>
-      <p class="col-md-8 col-sm-7 col-12">
-        When first enrolled at Iowa State, my major was originally Software Engineering. However, due to my strong
-        interest in business application development and significant extracurricular work experience, I made the switch
-        to Management Information Systems during my sophomore year.
-      </p>
-    </section>
-  </article>
-
-  <article>
+  <article id="skills">
     <h3>Skills / Experience</h3>
     <section class="row d-flex">
       <div class="col-lg-4 col-12 row">
         <p class="col-lg-12 col-7">
-          Throughout my career, I have had the opportunity (and sometimes misfortune) to work with many different pieces
-          of technology. Several skills marked as less than SME once qualified as SME, but due to not having used them
-          in some time have been adjusted.
+          Throughout my career, I have had the opportunity to work with many different pieces of technology. While some
+          proficiency levels noted here are not subject matter expert (SME), I have previously held SME-level expertise
+          in some of the areas. All of these skill levels have been adjusted to reflect recent usage rather
+          than my initial depth of knowledge.
         </p>
         <div class="col-lg-12 col-5">
           <p>Color Key:</p>
@@ -100,9 +79,9 @@
       </div>
       <ul class="col-lg-8 col-12 skills ps-5">
         <li *ngFor="let skill of skills"
-            [class.text-primary]="skill.level === 'Expert'"
-            [class.text-success]="skill.level === 'Advanced'"
-            [class.text-warning]="skill.level === 'Intermediate'"
+          [class.text-primary]="skill.level === 'Expert'"
+          [class.text-success]="skill.level === 'Advanced'"
+          [class.text-warning]="skill.level === 'Intermediate'"
         >
         <span class="skill"
         >
@@ -110,15 +89,43 @@
         </span>
           <ul *ngIf="skill.subSkills">
             <li *ngFor="let sub of skill.subSkills"
-                [class.text-primary]="sub.level === 'Expert'"
-                [class.text-success]="sub.level === 'Advanced'"
-                [class.text-warning]="sub.level === 'Intermediate'"
+              [class.text-primary]="sub.level === 'Expert'"
+              [class.text-success]="sub.level === 'Advanced'"
+              [class.text-warning]="sub.level === 'Intermediate'"
             >
               <span class="skill">{{ sub.name }}</span>
             </li>
           </ul>
         </li>
       </ul>
+    </section>
+  </article>
+  <article id="roles">
+    <h3>Roles</h3>
+    <section *ngFor="let role of experiences" class="new-role">
+      <div class="role-details col-md-4 col-sm-5 col-12">
+        <h4>{{ role.company }}</h4>
+        <p class="role-title">{{ role.title }}</p>
+        <p class="role-dates">{{ role.employed.start }} - {{ role.employed.end ? role.employed.end : 'Current' }}</p>
+        <a [href]="role.website" target="_blank"><em>{{ role.website }}</em></a>
+      </div>
+      <p class="role-description col-md-8 col-sm-7 col-12">{{ role.description }}</p>
+    </section>
+  </article>
+
+  <article id="education">
+    <h3>Education</h3>
+    <section class="row d-flex role">
+      <div class="col-md-4 col-sm-5 col-12">
+        <h4>Iowa State University</h4>
+        <p class="title font-weight-bold">BS Management Information Systems</p>
+        <p class="role-dates">2015-2019</p>
+      </div>
+      <p class="col-md-8 col-sm-7 col-12">
+        When first enrolled at Iowa State, my major was originally Software Engineering. However, due to my strong
+        interest in business application development and significant extracurricular work experience, I made the switch
+        to Management Information Systems during my sophomore year.
+      </p>
     </section>
   </article>
 </main>
